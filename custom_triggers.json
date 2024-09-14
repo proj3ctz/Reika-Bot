@@ -1,0 +1,12 @@
+import json
+
+def load_triggers():
+    try:
+        with open('triggers.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+def save_triggers(triggers):
+    with open('triggers.json', 'w') as f:
+        json.dump(triggers, f, indent=4)
